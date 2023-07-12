@@ -1,8 +1,17 @@
 header {
     width: 100%;
+    height: 80px;
     position: fixed;
     top: 0;
     left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: #cccccc;
+}
+
+.main-header-container{
+    width: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,21 +21,57 @@ header {
     display: flex;
 }
 
+.nav-logo img {
+    width: 55px;
+    height: 30px;
+}
+
+.nav-logo h1 {
+    margin-left: 8px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
 .nav-menu {
     display: relative;
+}
+
+.nav-menu-img_burger {
+    width: 34px;
+    height: 24px;
 }
 
 .nav-menu-items {
     width: 200px;
     height: 150px;
+    box-shadow: 0 0 12px #ccc;
     border-radius: 12px;
     position: absolute;
+    right: 1.8rem;
+    top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    vertical-align: baseline;
 }
 
-/* position 사용해야 할 것 같음. */
-/* 상위 포지션 relative로 하고 배지에 absolute 설정(안 보이게 할 때는 display none으로 설정)*/
+.nav-menu-item {
+    height: 33%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-.nav-menu-items div {
-    border-top: 1px solid #cccccc;
-    border-bottom: 1px solid #cccccc;
+.nav-menu-item-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+    margin-right: 8px;
+}
+
+.nav-menu-item_border {
+    border-top: 0.5px solid #cccccc;
+    border-bottom: 0.5px solid #cccccc;
 }
