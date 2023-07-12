@@ -1,21 +1,30 @@
 header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .nav-logo {
     display: flex;
 }
 
-/* .nav-menu {} */
+.nav-menu {
+    display: relative;
+}
 
 .nav-menu-items {
     width: 200px;
     height: 150px;
     border-radius: 12px;
+    position: absolute;
 }
 
 /* position 사용해야 할 것 같음. */
+/* 상위 포지션 relative로 하고 배지에 absolute 설정(안 보이게 할 때는 display none으로 설정)*/
 
 .nav-menu-items div {
     border-top: 1px solid #cccccc;
