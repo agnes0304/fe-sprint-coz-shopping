@@ -7,6 +7,10 @@ function App() {
   return (
     <>
       <Header />
+      <main className="main-container">
+        <h1 className="main-list-title">상품 리스트</h1>
+        <h1 className="main-list-title">북마크 리스트</h1>
+      </main>
       <Footer />
     </>
   );
