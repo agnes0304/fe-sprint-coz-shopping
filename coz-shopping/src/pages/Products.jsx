@@ -5,7 +5,7 @@ import Cardlist from "../components/Cardlist";
 import Footer from "../components/Footer";
 
 // Header, Filter, Cardlist, Footer 
-// filter 온클릭 -> type 전달, setCards
+// filter 온클릭 -> type 전달, setCards()
 
 function Products () {
     return (
