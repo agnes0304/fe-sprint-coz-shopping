@@ -6,7 +6,7 @@ import imgBrand from "../assets/brand.jpg";
 import './Filter.css';
 import { useState } from "react";
 
-function Filter() {
+function Filter({ onFilterChange }) {
   // filter enum으로 변경하기
   const FilterType = {
     ALL: 'all',
@@ -45,17 +45,7 @@ function Filter() {
   ]
 
   // filter 클릭하면 강조 + type 넘기기
-  const [ activeFilter, setFilter] = useState(null);
-  
-  const handleFilterClick = (filter) => {
-    setFilter((prevFilter) => {
-      if(prevFilter === filter) {
-        return null;
-      } 
-      return filter;
-    });
-  }
-
+  // Products로 옮김
 
   return (
     <>
@@ -63,7 +53,7 @@ function Filter() {
         {filters.map((filter)=>(
           <div className={`filter-item ${
             activeFilter === filter.type ? "active" : ""
-          }`} key={filter.type} onClick={()=>handleFilterClick(filter.type)}>
+          }`} key={filter.type} onClick={()=>onFilterChange(filter.type)}>
             <div className="filter-item_img">
               <img src={filter.img} alt={filter.title} />
             </div>
