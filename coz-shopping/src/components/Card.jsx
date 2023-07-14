@@ -30,7 +30,7 @@ function Card(props) {
           </div>
           <div className="third-row">
             <p className="card-sub_title">{sub_title}</p>
-            <p className="card-sub-content price">{price}</p>
+            <p className="card-sub-content price">{price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원</p>
           </div>
         </>
       );
@@ -77,7 +77,7 @@ function Card(props) {
           </div>
           <div className="third-row">
             <p className="card-sub_title"></p>
-            <p className="card-sub-content">{follower}</p>
+            <p className="card-sub-content">{follower.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</p>
           </div>
         </>
       );
