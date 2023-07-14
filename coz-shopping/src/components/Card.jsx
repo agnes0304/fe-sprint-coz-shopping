@@ -1,5 +1,5 @@
 import React from "react";
-import './Card.css';
+import "./Card.css";
 
 function Card(props) {
   const {
@@ -11,10 +11,10 @@ function Card(props) {
     image_url,
     brand_name,
     follower,
-    brand_img_url,
+    brand_image_url,
   } = props;
 
-//   onClick시에 Modal open 되는거 만들어야. 
+  //   onClick시에 Modal open 되는거 만들어야.
 
   let cardContent;
   switch (type) {
@@ -24,10 +24,14 @@ function Card(props) {
           <div className="card-img">
             <img src={image_url} />
           </div>
-          <p className="card-title">{title}</p>
-          <p className="card-sub_title">{sub_title}</p>
-          <p className="card-sub_label">{discountPercentage}</p>
-          <p className="card-sub-content">{price}</p>
+          <div className="second-row">
+            <p className="card-title">{title}</p>
+            <p className="card-sub_label percentage">{discountPercentage}%</p>
+          </div>
+          <div className="third-row">
+            <p className="card-sub_title">{sub_title}</p>
+            <p className="card-sub-content price">{price}</p>
+          </div>
         </>
       );
       break;
@@ -38,10 +42,9 @@ function Card(props) {
           <div className="card-img">
             <img src={image_url} />
           </div>
-          <p className="card-title">{title}</p>
-          <p className="card-sub_title"></p>
-          <p className="card-sub_label"></p>
-          <p className="card-sub-content"></p>
+          <div className="second-row">
+            <p className="card-title">#{title}</p>
+          </div>
         </>
       );
       break;
@@ -52,10 +55,12 @@ function Card(props) {
           <div className="card-img">
             <img src={image_url} />
           </div>
+          <div className="second-row">
           <p className="card-title">{title}</p>
+          </div>
+          <div className="third-row">
           <p className="card-sub_title">{sub_title}</p>
-          <p className="card-sub_label"></p>
-          <p className="card-sub-content"></p>
+          </div>
         </>
       );
       break;
@@ -64,12 +69,16 @@ function Card(props) {
       cardContent = (
         <>
           <div className="card-img">
-            <img src={brand_img_url} />
+            <img src={brand_image_url} />
           </div>
-          <p className="card-title">{brand_name}</p>
-          <p className="card-sub_title"></p>
-          <p className="card-sub_label">관심 고객수</p>
-          <p className="card-sub-content">{follower}</p>
+          <div className="second-row">
+            <p className="card-title">{brand_name}</p>
+            <p className="card-sub_label">관심 고객수</p>
+          </div>
+          <div className="third-row">
+            <p className="card-sub_title"></p>
+            <p className="card-sub-content">{follower}</p>
+          </div>
         </>
       );
       break;
