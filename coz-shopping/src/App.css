@@ -1,0 +1,15 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 140px;
+    /* justify-content: center; */
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.main-list-title {
+    width: 90%;
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 600;
+}

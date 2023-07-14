@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react";
 import "./Header.css";
 import imgBurger from "../assets/burger.png";
@@ -8,11 +8,25 @@ import imgStar from "../assets/star.png";
 
 function Header() {
   const [isopen, setIsopen] = useState("false");
-
   function toggleHandler() {
     setIsopen(!isopen);
   }
 
+  // menu 이외 영역 onClick시 menu close
+  const menuRef = useRef(null);
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setIsopen(false);
+      }
+    }
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+  
   return (
     <>
       <header>
@@ -21,7 +35,7 @@ function Header() {
             <img src={imgLogo} />
             <h1>COZ Shopping</h1>
           </div>
-          <div className="nav-menu" onClick={toggleHandler}>
+          <div className="nav-menu" onClick={toggleHandler} ref={menuRef}>
             <img className="nav-menu-img_burger" src={imgBurger} />
             {isopen && (
               <nav className="nav-menu-items">

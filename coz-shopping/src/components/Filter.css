@@ -1,0 +1,40 @@
+.filter-container {
+  width: 554px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  /* 개별 페이지에서 리스트와 간격 */
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-item_img {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.filter-item_img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.filter-title {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.filter-item.active .filter-title {
+  font-weight: 700;
+  color: #412dd4;
+  text-decoration: 2px solid #412dd4 underline;
+}
