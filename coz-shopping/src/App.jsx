@@ -2,9 +2,7 @@ import React from "react";
 import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Filter from "./components/Filter";
-// test로 filter 넣어봄
-import Cardlist from "./pages/Cardlist";
+import Cardlist from "./components/Cardlist";
 // test로 Cardlist 넣어봄
 
 function App() {
