@@ -8,11 +8,22 @@ import Footer from "../components/Footer";
 // filter 온클릭 -> type 전달, setCards()
 
 function Products () {
+    const [ activeFilter, setFilter] = useState(null);
+  
+    const handleFilterClick = (filter) => {
+      setFilter((prevFilter) => {
+        if(prevFilter === filter) {
+          return null;
+        } 
+        return filter;
+      });
+    }
+
     return (
         <>
             <Header />
-            <Filter />
-            <Cardlist />
+            <Filter onFilterChange={handleFilterClick} />
+            <Cardlist activeFilter={activeFilter} />
             <Footer />
         </>
     )
