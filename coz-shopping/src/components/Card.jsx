@@ -14,6 +14,8 @@ function Card(props) {
     brand_img_url,
   } = props;
 
+//   onClick시에 Modal open 되는거 만들어야. 
+
   let cardContent;
   switch (type) {
     case "Product":
