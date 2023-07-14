@@ -8,12 +8,12 @@ import imgStar from "../assets/star.png";
 
 function Header() {
   const [isopen, setIsopen] = useState("false");
-  const menuRef = useRef(null);
-
   function toggleHandler() {
     setIsopen(!isopen);
   }
 
+  // menu 이외 영역 onClick시 menu close
+  const menuRef = useRef(null);
   useEffect(() => {
     function handleClickOutside(e) {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -26,6 +26,7 @@ function Header() {
     };
   }, []);
 
+  
   return (
     <>
       <header>
