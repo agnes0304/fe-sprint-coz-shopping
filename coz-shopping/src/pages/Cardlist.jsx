@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "../components/Card";
+import classes from "./Cardlist.module.css";
 
 function Cardlist() {
   const [cards, setCards] = useState([]);
@@ -13,12 +14,11 @@ function Cardlist() {
   return (
     <>
       {cards.length > 0 && (
-        <ul className="">
+        <ul className={classes.cards}>
           {
             cards.map((card) => (
-              <Card key={card.id} />
+              <Card key={card.id} {...card} />
             ))
-            // 필요한 거 넘겨주면 되겠지.
           }
         </ul>
       )}
