@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: stretch;
   width: 100%;
-
+  /* height를 어떻게 줘야 할지 고민: 이것도 괜찮긴 한데.. */
 }
 
 .card-img {

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Card from "../components/Card";
+import Card from './Card';
 import classes from "./Cardlist.module.css";
 
 function Cardlist() {

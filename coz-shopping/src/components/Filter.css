@@ -2,6 +2,8 @@
     width: 554px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 12px;
+    /* 개별 페이지에서 리스트와 간격 */
 }
 
 .filter-item {
