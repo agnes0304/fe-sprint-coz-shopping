@@ -4,6 +4,7 @@ import imgExhibition from "../assets/exhibition.jpg";
 import imgCategory from "../assets/category.jpg";
 import imgBrand from "../assets/brand.jpg";
 import './Filter.css';
+import { useState } from "react";
 
 function Filter() {
   // filter enum으로 변경하기
@@ -43,12 +44,26 @@ function Filter() {
     },
   ]
 
+  // filter 클릭하면 강조 + type 넘기기
+  const [ activeFilter, setFilter] = useState(null);
+  
+  const handleFilterClick = (filter) => {
+    setFilter((prevFilter) => {
+      if(prevFilter === filter) {
+        return null;
+      } 
+      return filter;
+    });
+  }
+
 
   return (
     <>
       <section className="filter-container">
         {filters.map((filter)=>(
-          <div className="filter-item" key={filter.type}>
+          <div className={`filter-item ${
+            activeFilter === filter.type ? "active" : ""
+          }`} key={filter.type} onClick={()=>handleFilterClick(filter.type)}>
             <div className="filter-item_img">
               <img src={filter.img} alt={filter.title} />
             </div>

@@ -3,6 +3,7 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Cardlist from "./components/Cardlist";
+import Filter from "./components/Filter";
 // test로 Cardlist 넣어봄
 
 function App() {
